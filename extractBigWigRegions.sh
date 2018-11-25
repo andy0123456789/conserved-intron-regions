@@ -21,7 +21,7 @@ bed="$2"
 {
     IFS=$'\t'
     while read chrom beg end rest; do
-        out="bigwig_intronic/${USER}_${$}_${chrom}_${beg}_${end}"
+        out="data/intronic_conservation_bedgraphs/${USER}_${$}_${chrom}_${beg}_${end}"
         ./bigWigToBedGraph -chrom=$chrom -start=$beg -end=$end "$bw" "$out"
     done < "$bed"
 }
